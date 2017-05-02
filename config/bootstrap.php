@@ -238,3 +238,5 @@ Configure::write('Theme', [
     'skin' => 'blue'
 
 ]);
+
+include("ninja_cms.php");
