@@ -220,3 +220,21 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
+
+Configure::write('Theme', [
+    'title' => 'NinjaCMS',
+    'logo' => [
+        'mini' => 'N',
+        'large' => 'NinjaCMS'
+    ],
+    'login' => [
+        'show_remember' => true,
+        'show_register' => true,
+        'show_social' => true
+    ],
+    'folder' => ROOT,
+    'skin' => 'blue'
+
+]);

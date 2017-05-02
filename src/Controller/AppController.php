@@ -15,6 +15,7 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Core\Configure;
 use Cake\Event\Event;
 
 /**
@@ -60,6 +61,10 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
+        $this->viewBuilder()->theme('AdminLTE');
+
+        $this->set('theme', Configure::read('Theme'));
+
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
